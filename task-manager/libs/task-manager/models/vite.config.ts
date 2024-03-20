@@ -7,7 +7,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/task-manager/interfaces',
+  cacheDir: '../../../node_modules/.vite/libs/task-manager/models',
 
   plugins: [
     react(),
@@ -27,7 +27,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../dist/libs/task-manager/interfaces',
+    outDir: '../../../dist/libs/task-manager/models',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -35,7 +35,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'task-manager-interfaces',
+      name: 'task-manager-models',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -57,7 +57,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../../coverage/libs/task-manager/interfaces',
+      reportsDirectory: '../../../coverage/libs/task-manager/models',
       provider: 'v8',
     },
   },

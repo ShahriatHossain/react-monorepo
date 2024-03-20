@@ -24,8 +24,8 @@
       "@task-manager/task-manager-features": [
         "libs/task-manager/features/src/index.ts"
       ],
-      "@task-manager/task-manager-interfaces": [
-        "libs/task-manager/interfaces/src/index.ts"
+      "@task-manager/task-manager-models": [
+        "libs/task-manager/models/src/index.ts"
       ],
       "@task-manager/task-manager-shared": [
         "libs/task-manager/shared/src/index.ts"

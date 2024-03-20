@@ -1,6 +1,4 @@
-
-
-import { Task } from '../../../interfaces/src/lib/task.interface';
+import { Task } from "@task-manager/task-manager-models";
 
 export class TaskService {
   getAllTasks(): Task[] {

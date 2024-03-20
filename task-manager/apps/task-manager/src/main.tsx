@@ -1,5 +1,7 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
+
 
 import App from './app/app';
 
@@ -8,6 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
+    <FluentProvider theme={teamsLightTheme}>
     <App />
+  </FluentProvider>
   </StrictMode>
 );
+
