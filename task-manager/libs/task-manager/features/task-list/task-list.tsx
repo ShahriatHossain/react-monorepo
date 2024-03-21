@@ -21,6 +21,7 @@ import { EditRegular, DeleteRegular } from '@fluentui/react-icons';
 import { useStore } from '@task-manager/task-manager-core';
 import { Task } from '@task-manager/task-manager-models';
 import { ModalDialog } from '../common/dialog/dialog';
+import { AddTaskForm } from '../add-task-form/add-task-form';
 
 const columns = [
   { columnKey: 'id', label: 'ID' },
@@ -56,12 +57,20 @@ export const TaskList: React.FC = observer(() => {
           Create
         </Button>
 
-        <ModalDialog  // this controls the dialog open state
+        <ModalDialog
           open={open}
           onOpenChange={(event, data) => {
             // it is the users responsibility to react accordingly to the open state change
             setOpen(data.open);
-          }}></ModalDialog>
+          }}
+          title="Add Task"
+          action={() => console.log("Action clicked")}
+          actionText="Save"
+        >
+          <AddTaskForm></AddTaskForm>
+        </ModalDialog>
+
+
       </div>
 
       <Table
@@ -95,6 +104,6 @@ export const TaskList: React.FC = observer(() => {
           ))}
         </TableBody>
       </Table>
-    </Card>
+    </Card >
   );
 });

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './dialog.module.css';
 import {
   Dialog,
@@ -12,19 +12,25 @@ import {
   Button,
   useRestoreFocusTarget,
 } from "@fluentui/react-components";
+import { AddTaskForm } from '../../add-task-form/add-task-form';
 
 /* eslint-disable-next-line */
 export interface DialogProps {
   open: boolean,
-  onOpenChange: (event: any, data: any) => void
+  onOpenChange: (event: any, data: any) => void,
+  title: string,
+  action: () => void,
+  actionText: string,
+  children: ReactNode // Add children prop
+
 }
 
-export function ModalDialog(props: DialogProps) {
-  const { open, onOpenChange } = props; // Destructure props
+export const ModalDialog: React.FC<DialogProps> = (props) => {
+  const { open, onOpenChange, title, action, actionText, children } = props;
 
   // Function to handle open state change
   const handleOpenChange = (event: any, data: any) => {
-    onOpenChange(event, data); // Call the onOpenChange callback passed from parent
+    props.onOpenChange(event, data); // Call the onOpenChange callback passed from parent
   };
 
   return (
@@ -35,12 +41,9 @@ export function ModalDialog(props: DialogProps) {
       >
         <DialogSurface>
           <DialogBody>
-            <DialogTitle>Dialog title</DialogTitle>
+            <DialogTitle>{title}</DialogTitle>
             <DialogContent>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              exercitationem cumque repellendus eaque est dolor eius expedita
-              nulla ullam? Tenetur reprehenderit aut voluptatum impedit
-              voluptates in natus iure cumque eaque?
+              {children}
             </DialogContent>
 
             <DialogActions>
@@ -48,7 +51,7 @@ export function ModalDialog(props: DialogProps) {
               <DialogTrigger disableButtonEnhancement>
                 <Button appearance="secondary">Close</Button>
               </DialogTrigger>
-              <Button appearance="primary">Do Something</Button>
+              <Button appearance="primary" onClick={action}>{actionText}</Button>
             </DialogActions>
           </DialogBody>
         </DialogSurface>
