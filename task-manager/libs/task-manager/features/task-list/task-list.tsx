@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import {
   Avatar,
@@ -22,6 +22,7 @@ import { useStore } from '@task-manager/task-manager-core';
 import { Task } from '@task-manager/task-manager-models';
 import { ModalDialog } from '../common/dialog/dialog';
 import { AddTaskForm } from '../add-task-form/add-task-form';
+import { EditTask } from '../edit-task/edit-task';
 
 const columns = [
   { columnKey: 'id', label: 'ID' },
@@ -30,46 +31,47 @@ const columns = [
   { columnKey: 'actions', label: 'Actions' },
 ];
 
-export const TaskList: React.FC = observer(() => {
-  const [open, setOpen] = React.useState(false);
-  const restoreFocusTargetAttribute = useRestoreFocusTarget();
+/* eslint-disable-next-line */
+export interface TaskListProps {
+  isAdding: boolean,
+  onStopAdding: () => void
+}
+
+export const TaskList: React.FC<TaskListProps> = observer((props) => {
+  const { isAdding, onStopAdding } = props;
   const keyboardNavAttr = useArrowNavigationGroup({ axis: 'grid' });
   const focusableGroupAttr = useFocusableGroup({
     tabBehavior: 'limited-trap-focus',
   });
 
   const { taskStore } = useStore();
-  const { getTasks } = taskStore;
 
 
 
   return (
     <Card>
-      <h2>Task List</h2>
       <div>
-        <Button appearance="primary" style={{ float: 'right' }}
-          // restoreFocusTargetAttribute ensures that focus is restored to this button when the dialog closes
-          {...restoreFocusTargetAttribute}
-          onClick={() => {
-            // it is the user responsibility to open the dialog
-            setOpen(true);
-          }}>
-          Create
-        </Button>
-
-        <ModalDialog
-          open={open}
-          onOpenChange={(event, data) => {
-            // it is the users responsibility to react accordingly to the open state change
-            setOpen(data.open);
-          }}
+        {isAdding && <ModalDialog
+          open={isAdding}
+          onOpenChange={onStopAdding}
           title="Add Task"
           action={() => console.log("Action clicked")}
           actionText="Save"
+          showActionButtons={false}
         >
-          <AddTaskForm></AddTaskForm>
-        </ModalDialog>
+          <AddTaskForm onCancel={onStopAdding}></AddTaskForm>
+        </ModalDialog>}
 
+        {isAdding && <ModalDialog
+          open={isAdding}
+          onOpenChange={onStopAdding}
+          title="Edit Task"
+          action={() => console.log("Action clicked")}
+          actionText="Save"
+          showActionButtons={false}
+        >
+          <EditTask onCancel={onStopAdding}></EditTask>
+        </ModalDialog>}
 
       </div>
 
@@ -89,15 +91,21 @@ export const TaskList: React.FC = observer(() => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {getTasks().map((item: Task) => (
+          {taskStore.tasks.map((item: Task) => (
             <TableRow key={item.id}>
               <TableCell tabIndex={0} role="gridcell">
+                <TableCellLayout>{item.id}</TableCellLayout>
+              </TableCell>
+              <TableCell tabIndex={0} role="gridcell">
                 <TableCellLayout>{item.title}</TableCellLayout>
+              </TableCell>
+              <TableCell tabIndex={0} role="gridcell">
+                <TableCellLayout>{item.description}</TableCellLayout>
               </TableCell>
               <TableCell role="gridcell" tabIndex={0} {...focusableGroupAttr}>
                 <TableCellLayout>
                   <Button icon={<EditRegular />} aria-label="Edit" />
-                  <Button icon={<DeleteRegular />} aria-label="Delete" />
+                  <Button icon={<DeleteRegular />} aria-label="Delete" onClick={()=> taskStore.deleteTask(item.id)} />
                 </TableCellLayout>
               </TableCell>
             </TableRow>

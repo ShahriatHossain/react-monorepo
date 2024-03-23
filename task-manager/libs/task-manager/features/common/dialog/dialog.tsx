@@ -21,16 +21,17 @@ export interface DialogProps {
   title: string,
   action: () => void,
   actionText: string,
-  children: ReactNode // Add children prop
+  children: ReactNode // Add children prop,
+  showActionButtons: boolean
 
 }
 
 export const ModalDialog: React.FC<DialogProps> = (props) => {
-  const { open, onOpenChange, title, action, actionText, children } = props;
+  const { open, onOpenChange, title, action, actionText, children, showActionButtons } = props;
 
   // Function to handle open state change
   const handleOpenChange = (event: any, data: any) => {
-    props.onOpenChange(event, data); // Call the onOpenChange callback passed from parent
+    onOpenChange(event, data); // Call the onOpenChange callback passed from parent
   };
 
   return (
@@ -46,13 +47,14 @@ export const ModalDialog: React.FC<DialogProps> = (props) => {
               {children}
             </DialogContent>
 
-            <DialogActions>
+            {showActionButtons && <DialogActions>
               {/* DialogTrigger inside of a Dialog still works properly */}
               <DialogTrigger disableButtonEnhancement>
                 <Button appearance="secondary">Close</Button>
               </DialogTrigger>
               <Button appearance="primary" onClick={action}>{actionText}</Button>
-            </DialogActions>
+            </DialogActions>}
+
           </DialogBody>
         </DialogSurface>
       </Dialog>

@@ -1,1 +1,1 @@
-export * from './lib/task-manager-shared';
+export * from './lib/utils/utils';
