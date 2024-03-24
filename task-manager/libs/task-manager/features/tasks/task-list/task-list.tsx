@@ -50,12 +50,12 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
     dialogStore.setDialogIsVisible(true);
   }
 
-  const onOpenChangeHanlder = () => {
+  const onOpenChangeHandler = () => {
     dialogStore.setDialogIsVisible(false);
   }
 
   const onClearTaskIdHandler = () => {
-    setTaskId('');
+    setTaskId(prevState => '')
   }
 
   return (
@@ -63,7 +63,7 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
       <div>
         {dialogStore.dislogIsVisible && <ModalDialog
           open={dialogStore.dislogIsVisible}
-          onOpenChange={onOpenChangeHanlder}
+          onOpenChange={onOpenChangeHandler}
           title="Add Task"
           action={() => console.log("Action clicked")}
           actionText="Save"

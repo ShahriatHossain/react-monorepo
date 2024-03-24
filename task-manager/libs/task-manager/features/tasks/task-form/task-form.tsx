@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import {
   Button,
   Field,
@@ -45,7 +45,6 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
 
   const [task, setTask] = useState<TaskFormValues>(new TaskFormValues());
 
-
   useEffect(() => {
     if (id) {
       loadTask(id).then(task => {
@@ -57,44 +56,36 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
       })
     } else {
       // Clear form fields when switching to "new" mode
-      setTask(new TaskFormValues());
-      setEnteredTitle('');
-      setEnteredDescription('');
+      clearFormFields();
     }
   }, [id, loadTask]);
 
-  function handleAddTask() {
-    if (!task.id) {
-      let newTask = {
-        id: generateRandomId(),
-        title: enteredTitle,
-        description: enteredDescription
-      };
-      createTask(newTask).then(() => handleClearForm())
-    } else {
+  const clearFormFields = () => {
+    setTask(new TaskFormValues());
+    setEnteredTitle('');
+    setEnteredDescription('');
+  };
 
-      let currentTask = {
-        id: task.id,
-        title: enteredTitle,
-        description: enteredDescription
-      };
+  const handleAddTask = () => {
+    const newTask = {
+      id: task.id || generateRandomId(), // If task.id is undefined, generate a new ID
+      title: enteredTitle,
+      description: enteredDescription
+    };
+    const taskOperation = task.id ? updateTask(newTask) : createTask(newTask);
+    taskOperation.then(() => {
+      dialogStore.setDialogIsVisible(false);
+      onClearTaskId();
+    });
+  };
 
-      updateTask(currentTask).then(() => handleClearForm())
-    }
-  }
-
-  const handleClearForm = () => {
-    dialogStore.setDialogIsVisible(false);
-    onClearTaskId();
-  }
-
-  const titleChangeHandler = (event: any) => {
+  const titleChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setEnteredTitle(event.target.value);
-  }
+  };
 
-  const descriptionChangeHandler = (event: any) => {
+  const descriptionChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setEnteredDescription(event.target.value);
-  }
+  };
 
   return (
     <div className={useStackClassName()}>
@@ -105,7 +96,7 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
         <Textarea onChange={descriptionChangeHandler} value={enteredDescription} />
       </Field>
       <p className={styles.wrapper}>
-        <Button appearance="secondary" onClick={handleClearForm}>Close</Button>
+        <Button appearance="secondary" onClick={clearFormFields}>Close</Button>
         <Button appearance="primary" onClick={handleAddTask}>Save</Button>
       </p>
     </div>
