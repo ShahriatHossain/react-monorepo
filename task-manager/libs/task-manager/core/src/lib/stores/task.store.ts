@@ -1,9 +1,10 @@
 import { makeAutoObservable, reaction, runInAction } from 'mobx';
 import agent from '../api/agent';
-import { Task } from '@task-manager/task-manager-models';
+import { Task, TaskFormValues } from '@task-manager/task-manager-models';
 
 export default class TaskStore {
   tasks: Task[] = [];
+  selectedTask: Task | undefined = undefined;
 
   constructor() {
     makeAutoObservable(this);
@@ -21,11 +22,15 @@ export default class TaskStore {
   loadTask = async (id: string) => {
     let task = this.getTask(id);
     if (task) {
+      this.selectedTask = task;
       return task;
     } else {
       try {
         task = await agent.Tasks.details(id);
         this.setTask(task);
+        runInAction(() => {
+          this.selectedTask = task;
+        })
         return task;
       } catch (error) {
         console.log(error);
@@ -41,7 +46,7 @@ export default class TaskStore {
     return this.tasks.find((task) => task.id === id);
   };
 
-  createTask = async (task: Task) => {
+  createTask = async (task: TaskFormValues) => {
     try {
       await agent.Tasks.create(task);
       this.setTask(task);
@@ -50,7 +55,7 @@ export default class TaskStore {
     }
   };
 
-  updateTask = async (task: Task) => {
+  updateTask = async (task: TaskFormValues) => {
     try {
       await agent.Tasks.update(task);
       runInAction(() => {

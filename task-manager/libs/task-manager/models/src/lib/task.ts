@@ -5,13 +5,25 @@ export interface ITask {
 }
 
 export class Task implements ITask {
-  id: string;
-  title: string;
-  description: string;
+  id!: string;
+  title!: string;
+  description!: string;
 
-  constructor() {
-    this.id = '';
-    this.title = '';
-    this.description = '';
+  constructor(init?: TaskFormValues) {
+    Object.assign(this, init);
+  }
+}
+
+export class TaskFormValues {
+  id: string = '';
+  title: string = '';
+  description: string = '';
+
+  constructor(task?: TaskFormValues) {
+    if (task) {
+      this.id = task.id;
+      this.title = task.title;
+      this.description = task.description;
+    }
   }
 }

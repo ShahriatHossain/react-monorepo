@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { Task } from '@task-manager/task-manager-models';
+import { Task, TaskFormValues } from '@task-manager/task-manager-models';
 
 axios.defaults.baseURL = 'http://localhost:3000';
 
@@ -17,8 +17,8 @@ const requests = {
 const Tasks = {
   list: () => axios.get<Task[]>('/tasks').then(responseBody),
   details: (id: string) => requests.get<Task>(`/tasks/${id}`),
-  create: (task: Task) => requests.post<void>('/tasks', task),
-  update: (task: Task) =>
+  create: (task: TaskFormValues) => requests.post<void>('/tasks', task),
+  update: (task: TaskFormValues) =>
     requests.put<void>(`/tasks/${task.id}`, task),
   delete: (id: string) => requests.del<void>(`/tasks/${id}`),
   attend: (id: string) => requests.post<void>(`/tasks/${id}/attend`, {}),
