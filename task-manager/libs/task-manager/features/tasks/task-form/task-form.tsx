@@ -21,7 +21,8 @@ const useStackClassName = makeResetStyles({
 });
 
 export interface TaskFormProps {
-  id: string
+  id: string,
+  onClearTaskId: () => void
 }
 
 const useStyles = makeStyles({
@@ -32,7 +33,7 @@ const useStyles = makeStyles({
 });
 
 export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
-  const { id } = props;
+  const { id, onClearTaskId } = props;
 
   const [enteredTitle, setEnteredTitle] = useState<string>('');
   const [enteredDescription, setEnteredDescription] = useState<string>('');
@@ -46,7 +47,20 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
 
 
   useEffect(() => {
-    if (id) loadTask(id).then(task => setTask(new TaskFormValues(task)))
+    if (id) {
+      loadTask(id).then(task => {
+        if (task) {
+          setTask(new TaskFormValues(task));
+          setEnteredTitle(task.title);
+          setEnteredDescription(task.description);
+        }
+      })
+    } else {
+      // Clear form fields when switching to "new" mode
+      setTask(new TaskFormValues());
+      setEnteredTitle('');
+      setEnteredDescription('');
+    }
   }, [id, loadTask]);
 
   function handleAddTask() {
@@ -56,7 +70,7 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
         title: enteredTitle,
         description: enteredDescription
       };
-      createTask(newTask).then(() => dialogStore.setDialogIsVisible(false))
+      createTask(newTask).then(() => handleClearForm())
     } else {
 
       let currentTask = {
@@ -65,8 +79,13 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
         description: enteredDescription
       };
 
-      updateTask(currentTask).then(() => dialogStore.setDialogIsVisible(false))
+      updateTask(currentTask).then(() => handleClearForm())
     }
+  }
+
+  const handleClearForm = () => {
+    dialogStore.setDialogIsVisible(false);
+    onClearTaskId();
   }
 
   const titleChangeHandler = (event: any) => {
@@ -80,13 +99,13 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
   return (
     <div className={useStackClassName()}>
       <Field label="Title">
-        <Input type='text' onChange={titleChangeHandler} value={task.title} />
+        <Input type='text' onChange={titleChangeHandler} value={enteredTitle} />
       </Field>
       <Field label="Description">
-        <Textarea onChange={descriptionChangeHandler} value={task.description} />
+        <Textarea onChange={descriptionChangeHandler} value={enteredDescription} />
       </Field>
       <p className={styles.wrapper}>
-        <Button appearance="secondary" onClick={() => dialogStore.setDialogIsVisible(false)}>Close</Button>
+        <Button appearance="secondary" onClick={handleClearForm}>Close</Button>
         <Button appearance="primary" onClick={handleAddTask}>Save</Button>
       </p>
     </div>

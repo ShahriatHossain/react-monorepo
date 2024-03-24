@@ -54,6 +54,10 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
     dialogStore.setDialogIsVisible(false);
   }
 
+  const onClearTaskIdHandler = () => {
+    setTaskId('');
+  }
+
   return (
     <Card>
       <div>
@@ -65,7 +69,7 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
           actionText="Save"
           showActionButtons={false}
         >
-          <TaskForm id={taskId}></TaskForm>
+          <TaskForm id={taskId} onClearTaskId={onClearTaskIdHandler}></TaskForm>
         </ModalDialog>}
       </div>
 

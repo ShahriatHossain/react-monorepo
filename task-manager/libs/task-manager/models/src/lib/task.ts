@@ -1,16 +1,14 @@
-export interface ITask {
-  id: string;
-  title: string;
-  description: string;
-}
-
-export class Task implements ITask {
-  id!: string;
-  title!: string;
-  description!: string;
+export class Task {
+  id: string = "";
+  title: string = "";
+  description: string = "";
 
   constructor(init?: TaskFormValues) {
-    Object.assign(this, init);
+    if (init) {
+      this.id = init.id;
+      this.title = init.title;
+      this.description = init.description;
+    }
   }
 }
 
