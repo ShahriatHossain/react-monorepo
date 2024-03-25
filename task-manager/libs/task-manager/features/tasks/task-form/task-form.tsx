@@ -37,6 +37,9 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
 
   const [enteredTitle, setEnteredTitle] = useState<string>('');
   const [enteredDescription, setEnteredDescription] = useState<string>('');
+  const [isTitleValid, setIsTitleValid] = useState<boolean>(true);
+  const [isDescriptionValid, setIsDescriptionValid] = useState<boolean>(true);
+
 
   const styles = useStyles();
   const { taskStore, dialogStore } = useStore();
@@ -64,6 +67,13 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
   }, [id, loadTask]);
 
   function handleAddTask() {
+    if (!enteredTitle.trim() || !enteredDescription.trim()) {
+      // If either title or description is empty, show an error message or handle the case accordingly
+      setIsTitleValid(!!enteredTitle.trim()); // Validate if title is not empty
+      setIsDescriptionValid(!!enteredDescription.trim()); // Validate if description is not empty
+      return;
+    }
+
     if (!task.id) {
       let newTask = {
         id: generateRandomId(),
@@ -88,20 +98,25 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
     onClearTaskId();
   }
 
-  const titleChangeHandler = (event: any) => {
-    setEnteredTitle(event.target.value);
+  const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setEnteredTitle(value);
+    setIsTitleValid(!!value.trim()); // Validate if title is not empty
   }
 
-  const descriptionChangeHandler = (event: any) => {
-    setEnteredDescription(event.target.value);
+  const descriptionChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = event.target.value;
+    setEnteredDescription(value);
+    setIsDescriptionValid(!!value.trim()); // Validate if description is not empty
   }
+
 
   return (
     <div className={useStackClassName()}>
-      <Field label="Title">
+      <Field label="Title" required validationState={isTitleValid ? "none" : "error"} validationMessage={!isTitleValid ? "Title is required" : null}>
         <Input type='text' onChange={titleChangeHandler} value={enteredTitle} />
       </Field>
-      <Field label="Description">
+      <Field label="Description" required validationState={isDescriptionValid ? "none" : "error"} validationMessage={!isDescriptionValid ? "Description is required" : null}>
         <Textarea onChange={descriptionChangeHandler} value={enteredDescription} />
       </Field>
       <p className={styles.wrapper}>
