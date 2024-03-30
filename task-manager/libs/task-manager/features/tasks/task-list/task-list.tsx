@@ -17,12 +17,13 @@ import {
   useFocusableGroup,
   useRestoreFocusTarget
 } from '@fluentui/react-components';
-import { EditRegular, DeleteRegular } from '@fluentui/react-icons';
+import { EditRegular, DeleteRegular, ContentViewGalleryRegular } from '@fluentui/react-icons';
 
 import { useStore } from '@task-manager/task-manager-core';
 import { Task } from '@task-manager/task-manager-models';
 import { ModalDialog } from '../../common/dialog/dialog';
 import { TaskForm } from '../task-form/task-form';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { columnKey: 'id', label: 'ID' },
@@ -102,8 +103,11 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
               </TableCell>
               <TableCell role="gridcell" tabIndex={0} {...focusableGroupAttr}>
                 <TableCellLayout>
-                  <Button icon={<EditRegular />} aria-label="Edit" onClick={() => editTaskHandler(item.id)} />
-                  <Button icon={<DeleteRegular />} aria-label="Delete" onClick={() => taskStore.deleteTask(item.id)} />
+                  <Button icon={<EditRegular />} title='Edit' aria-label="Edit" onClick={() => editTaskHandler(item.id)} />
+                  <Button icon={<DeleteRegular />} title='Delete' aria-label="Delete" onClick={() => taskStore.deleteTask(item.id)} />
+                  <Link to={`/react-monorepo/task/${item.id}`}>
+                    <Button icon={<ContentViewGalleryRegular />} title='Details' aria-label="Details" />
+                  </Link>
                 </TableCellLayout>
               </TableCell>
             </TableRow>
