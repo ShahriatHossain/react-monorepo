@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("react/jsx-runtime"),i={};function e(n){return t.jsx("div",{className:i.container,children:t.jsx("h1",{children:"Welcome to ValidationUtils!"})})}exports.ValidationUtils=e;

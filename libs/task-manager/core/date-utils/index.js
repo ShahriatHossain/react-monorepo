@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("react/jsx-runtime"),t={};function s(i){return e.jsx("div",{className:t.container,children:e.jsx("h1",{children:"Welcome to DateUtils!"})})}exports.DateUtils=s;

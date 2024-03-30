@@ -1,0 +1,9 @@
+{
+  "name": "task-manager-models",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/task-manager/models/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project task-manager-models --web",
+  "targets": {}
+}
