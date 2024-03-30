@@ -3,7 +3,10 @@
   "name": "@task-manager/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "predeploy": "npx nx run-many -t build",
+    "deploy": "gh-pages -b main -d dist"
+  },
   "private": true,
   "dependencies": {
     "@fluentui/react-components": "^9.47.1",
