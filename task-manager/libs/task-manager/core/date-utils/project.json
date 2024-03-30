@@ -1,9 +1,0 @@
-{
-  "name": "date-utils",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/task-manager/core/date-utils/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project date-utils --web",
-  "targets": {}
-}
