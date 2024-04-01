@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import {
   Avatar,
@@ -24,6 +24,7 @@ import { Task } from '@task-manager/task-manager-models';
 import { ModalDialog } from '../../common/dialog/dialog';
 import { TaskForm } from '../task-form/task-form';
 import { Link } from 'react-router-dom';
+import { LoadingSpinner, Pagination } from '@task-manager/task-manager-features';
 
 const columns = [
   { columnKey: 'id', label: 'ID' },
@@ -42,9 +43,19 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
     tabBehavior: 'limited-trap-focus',
   });
 
-  const { taskStore, dialogStore } = useStore();
+  const { taskStore, dialogStore, paginationStore } = useStore();
+
+  const restoreFocusTargetAttribute = useRestoreFocusTarget();
+
+  const onCreateTaskHandler = () => {
+    dialogStore.setDialogIsVisible(true);
+  }
 
   const [taskId, setTaskId] = useState<string>('');
+
+  useEffect(() => {
+    paginationStore.setTotalPages(taskStore?.totalTasks)
+  }, [taskStore?.totalTasks, paginationStore.setTotalPages]);
 
   const editTaskHandler = (id: string) => {
     setTaskId(id);
@@ -59,8 +70,20 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
     setTaskId(prevState => '')
   }
 
+
+
   return (
     <Card>
+      <h2>Task List</h2>
+      <div>
+        <Button appearance="primary"
+          // restoreFocusTargetAttribute ensures that focus is restored to this button when the dialog closes
+          {...restoreFocusTargetAttribute}
+          onClick={onCreateTaskHandler}>
+          Create
+        </Button>
+      </div>
+
       <div>
         {dialogStore.dislogIsVisible && <ModalDialog
           open={dialogStore.dislogIsVisible}
@@ -73,6 +96,8 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
           <TaskForm id={taskId} onClearTaskId={onClearTaskIdHandler}></TaskForm>
         </ModalDialog>}
       </div>
+
+      <LoadingSpinner label='Loading task...' loading={taskStore.loadingInitial} />
 
       <Table
         {...keyboardNavAttr}
@@ -114,6 +139,8 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
           ))}
         </TableBody>
       </Table>
+
+      <Pagination></Pagination>
     </Card >
   );
 });

@@ -9,7 +9,7 @@ import {
   tokens,
 } from "@fluentui/react-components";
 
-import { generateRandomId } from '@task-manager/task-manager-shared';
+import { generateRandomId, pageSize } from '@task-manager/task-manager-shared';
 import { observer } from 'mobx-react';
 import { useStore } from '@task-manager/task-manager-core';
 import { TaskFormValues } from '@task-manager/task-manager-models';
@@ -42,7 +42,7 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
 
 
   const styles = useStyles();
-  const { taskStore, dialogStore } = useStore();
+  const { taskStore, dialogStore, paginationStore } = useStore();
 
   const { loadTask, createTask, updateTask } = taskStore;
 
@@ -96,6 +96,8 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
   const handleClearForm = () => {
     dialogStore.setDialogIsVisible(false);
     onClearTaskId();
+
+    taskStore.loadPaginatedTasks(paginationStore.currentPage, pageSize); // Assuming pageSize is set
   }
 
   const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {

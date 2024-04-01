@@ -1,3 +1,6 @@
+export * from './../common/spinner/spinner';
+export * from './../common/layout/pagination/pagination';
+export * from './../common/layout/breadcrumbs/breadcrumbs';
 export * from './../tasks/task-details/task-details';
 export * from './lib/task-manager-features';
 export * from './../common/layout/main-header/main-header';

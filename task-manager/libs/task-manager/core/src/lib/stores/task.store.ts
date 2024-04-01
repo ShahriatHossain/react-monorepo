@@ -1,36 +1,40 @@
 import { makeAutoObservable, reaction, runInAction } from 'mobx';
 import agent from '../api/agent';
 import { Task, TaskFormValues } from '@task-manager/task-manager-models';
+import { pageSize } from '@task-manager/task-manager-shared';
 
 export default class TaskStore {
   tasks: Task[] = [];
-  selectedTask: Task | undefined = undefined;
+  totalTasks: number = 0;
+  loadingInitial = false;
 
   constructor() {
     makeAutoObservable(this);
-    this.loadTasks();
+    this.loadPaginatedTasks(1, pageSize); // Adjust as needed
   }
 
-  loadTasks = async () => {
+  loadPaginatedTasks = async (currentPage: number, limit: number) => {
+    this.loadingInitial = true;
     try {
-      this.tasks = await agent.Tasks.list();
+      const response = await agent.Tasks.listPaginated(currentPage, limit);
+      this.tasks = response.data;
+      this.setTotalTasks(Number(response.items));
+      this.setLoadingInitial(false);
     } catch (error) {
       console.log(error);
+      this.setLoadingInitial(false);
     }
   };
+
 
   loadTask = async (id: string) => {
     let task = this.getTask(id);
     if (task) {
-      this.selectedTask = task;
       return task;
     } else {
       try {
         task = await agent.Tasks.details(id);
         this.setTask(task);
-        runInAction(() => {
-          this.selectedTask = task;
-        })
         return task;
       } catch (error) {
         console.log(error);
@@ -89,4 +93,15 @@ export default class TaskStore {
       console.log(error);
     }
   };
+
+  setLoadingInitial = (state: boolean) => {
+    this.loadingInitial = state;
+  };
+
+  setTotalTasks = (totalTasks: number) => {
+    runInAction(() => {
+      this.totalTasks = totalTasks;
+    });
+  }
+
 }

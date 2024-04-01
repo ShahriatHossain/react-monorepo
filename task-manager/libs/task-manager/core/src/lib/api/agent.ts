@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { Task, TaskFormValues } from '@task-manager/task-manager-models';
+import { AjaxResponse, Task, TaskFormValues } from '@task-manager/task-manager-models';
 
 axios.defaults.baseURL = 'http://localhost:3000';
 
@@ -16,12 +16,13 @@ const requests = {
 
 const Tasks = {
   list: () => axios.get<Task[]>('/tasks').then(responseBody),
+  listPaginated: (page: number, limit: number) =>
+    axios.get<AjaxResponse>(`/tasks?_page=${page}&_per_page=${limit}`).then(responseBody),
   details: (id: string) => requests.get<Task>(`/tasks/${id}`),
   create: (task: TaskFormValues) => requests.post<void>('/tasks', task),
   update: (task: TaskFormValues) =>
     requests.put<void>(`/tasks/${task.id}`, task),
-  delete: (id: string) => requests.del<void>(`/tasks/${id}`),
-  attend: (id: string) => requests.post<void>(`/tasks/${id}/attend`, {}),
+  delete: (id: string) => requests.del<void>(`/tasks/${id}`)
 };
 
 const agent = {

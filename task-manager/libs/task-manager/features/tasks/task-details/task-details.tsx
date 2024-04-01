@@ -1,6 +1,9 @@
 import { useParams } from 'react-router-dom';
 import styles from './task-details.module.css';
 import { Body1, Subtitle2, Title3, makeStyles, shorthands } from '@fluentui/react-components';
+import { useEffect, useState } from 'react';
+import { useStore } from '@task-manager/task-manager-core';
+import { Task } from '@task-manager/task-manager-models';
 
 
 /* eslint-disable-next-line */
@@ -21,14 +24,21 @@ export function TaskDetails(props: TaskDetailsProps) {
   const { taskId } = useParams();
   const styles = useStyles();
 
+  const { taskStore } = useStore();
 
-  // Assuming tasks are fetched from an API or stored in a state
-  // You can replace this with your actual data fetching logic
-  const task = {
-    id: taskId,
-    title: "Sample Task Title",
-    description: "Sample Task Description"
-  };
+  const { loadTask } = taskStore;
+
+  const [task, setTask] = useState<Task>(new Task());
+
+  useEffect(() => {
+    if (taskId) {
+      loadTask(taskId).then(task => {
+        if (task) {
+          setTask(new Task(task));
+        }
+      })
+    } 
+  }, [taskId, loadTask]);
 
   return (
     <div className={styles.container}>
