@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './app.module.css';
 
-import { MainHeader, TaskDetails, TaskList } from '@task-manager/task-manager-features';
+import { MainHeader, TaskDetails, TaskList } from '@task-manager/task-manager-components';
 import { Card } from '@fluentui/react-components';
 import { Route, Routes } from 'react-router-dom';
 

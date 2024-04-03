@@ -18,17 +18,16 @@
       "@task-manager/date-utils": [
         "libs/task-manager/core/date-utils/src/index.ts"
       ],
+      "@task-manager/shared": ["libs/shared/src/index.ts"],
+      "@task-manager/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@task-manager/task-manager-components": [
+        "libs/task-manager/components/src/index.ts"
+      ],
       "@task-manager/task-manager-core": [
         "libs/task-manager/core/src/index.ts"
       ],
-      "@task-manager/task-manager-features": [
-        "libs/task-manager/features/src/index.ts"
-      ],
       "@task-manager/task-manager-models": [
         "libs/task-manager/models/src/index.ts"
-      ],
-      "@task-manager/task-manager-shared": [
-        "libs/task-manager/shared/src/index.ts"
       ],
       "@task-manager/validation-utils": [
         "libs/task-manager/core/validation-utils/src/index.ts"

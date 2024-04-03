@@ -1,7 +1,7 @@
 import { makeAutoObservable, reaction, runInAction } from 'mobx';
 import agent from '../api/agent';
 import { Task, TaskFormValues } from '@task-manager/task-manager-models';
-import { pageSize } from '@task-manager/task-manager-shared';
+import { pageSize } from '@task-manager/shared';
 
 export default class TaskStore {
   tasks: Task[] = [];

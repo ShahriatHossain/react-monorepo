@@ -1,0 +1,583 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.1.1",
+  "deps": {},
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "task-manager-core": [
+        {
+          "file": "task-manager/libs/task-manager/core/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/.eslintrc.json",
+          "hash": "12835607312082306239"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/README.md",
+          "hash": "8252652803983116362"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/package.json",
+          "hash": "14288892774538477346"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/project.json",
+          "hash": "9757622708431669784"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/index.ts",
+          "hash": "15927939294808823026"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/api/agent.ts",
+          "hash": "18165369784687449961"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/services/task.service.ts",
+          "hash": "10132673916371342097"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/store.ts",
+          "hash": "10415166934237794025"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/stores/dialog.store.ts",
+          "hash": "3928446146608050837"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/stores/pagination.store.ts",
+          "hash": "6887345667123257704"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/src/lib/stores/task.store.ts",
+          "hash": "16492754066082726386"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/tsconfig.json",
+          "hash": "7777951354717366821"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/tsconfig.lib.json",
+          "hash": "13347940390485836959"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/tsconfig.spec.json",
+          "hash": "2404517179498766309"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/vite.config.ts",
+          "hash": "2650652757486940280"
+        }
+      ],
+      "validation-utils": [
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/.eslintrc.json",
+          "hash": "857118519329349746"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/README.md",
+          "hash": "4741951602358655600"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/package.json",
+          "hash": "7075191042691479371"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/project.json",
+          "hash": "18429523168986022610"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/src/index.ts",
+          "hash": "14179640438017934417"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/src/lib/validation-utils.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/src/lib/validation-utils.spec.tsx",
+          "hash": "8180890139750708122"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/src/lib/validation-utils.tsx",
+          "hash": "14542782736748754263"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/tsconfig.json",
+          "hash": "15281313926799405607"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/tsconfig.lib.json",
+          "hash": "18276454965191384713"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/tsconfig.spec.json",
+          "hash": "5861352105792929081"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/validation-utils/vite.config.ts",
+          "hash": "11802920686548096465"
+        }
+      ],
+      "task-manager-e2e": [
+        {
+          "file": "task-manager/apps/task-manager-e2e/.eslintrc.json",
+          "hash": "10799368048025705622"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/cypress.config.ts",
+          "hash": "2410277204116542716"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/project.json",
+          "hash": "14967569012186179651"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/src/e2e/app.cy.ts",
+          "hash": "9976285791415738711"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/src/fixtures/example.json",
+          "hash": "13882982864087580737"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/src/support/app.po.ts",
+          "hash": "5364106453863571025"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/src/support/commands.ts",
+          "hash": "7570864621153670540"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/src/support/e2e.ts",
+          "hash": "14369563060992369541"
+        },
+        {
+          "file": "task-manager/apps/task-manager-e2e/tsconfig.json",
+          "hash": "10574899838287769993"
+        }
+      ],
+      "task-manager": [
+        {
+          "file": "task-manager/apps/task-manager/.eslintrc.json",
+          "hash": "14830867113928387670"
+        },
+        {
+          "file": "task-manager/apps/task-manager/index.html",
+          "hash": "4413454428266752526"
+        },
+        {
+          "file": "task-manager/apps/task-manager/project.json",
+          "hash": "9805927964709307528"
+        },
+        {
+          "file": "task-manager/apps/task-manager/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/app/app.module.css",
+          "hash": "14507130133388590702"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/app/app.spec.tsx",
+          "hash": "5363817041264319957"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/app/app.tsx",
+          "hash": "14587268153295086417"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/app/nx-welcome.tsx",
+          "hash": "307543222547804912"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/main.tsx",
+          "hash": "18325252957042372014"
+        },
+        {
+          "file": "task-manager/apps/task-manager/src/styles.css",
+          "hash": "4569669505032165803"
+        },
+        {
+          "file": "task-manager/apps/task-manager/tsconfig.app.json",
+          "hash": "9014817974750934731"
+        },
+        {
+          "file": "task-manager/apps/task-manager/tsconfig.json",
+          "hash": "8792423286157740794"
+        },
+        {
+          "file": "task-manager/apps/task-manager/tsconfig.spec.json",
+          "hash": "2338756782167906093"
+        },
+        {
+          "file": "task-manager/apps/task-manager/vite.config.ts",
+          "hash": "12854722678892173899"
+        }
+      ],
+      "task-manager-components": [
+        {
+          "file": "task-manager/libs/task-manager/components/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/.eslintrc.json",
+          "hash": "12835607312082306239"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/README.md",
+          "hash": "1426747841467274143"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/dialog/dialog.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/dialog/dialog.spec.tsx",
+          "hash": "9260050363531421839"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/dialog/dialog.tsx",
+          "hash": "3595713899099638960"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/breadcrumbs/breadcrumbs.module.css",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/breadcrumbs/breadcrumbs.spec.tsx",
+          "hash": "11506830726766765716"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/breadcrumbs/breadcrumbs.tsx",
+          "hash": "17947566015670540731"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/main-header/main-header.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/main-header/main-header.spec.tsx",
+          "hash": "8866272779120674283"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/main-header/main-header.tsx",
+          "hash": "3960699305689833588"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/pagination/pagination.module.css",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/pagination/pagination.spec.tsx",
+          "hash": "9402943481666888553"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/layout/pagination/pagination.tsx",
+          "hash": "2569667351813624154"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/common/spinner/spinner.module.css",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/common/spinner/spinner.spec.tsx",
+          "hash": "17571771993059858070"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/common/spinner/spinner.tsx",
+          "hash": "8556897654548164705"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/package.json",
+          "hash": "14229778842499554374"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/project.json",
+          "hash": "5531926052623712105"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/src/index.ts",
+          "hash": "10197852421931543465"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/src/lib/task-manager-components.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponentscomponentscomponents/src/lib/task-manager-components.spec.tsx",
+          "hash": "5654738419812261985"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponentscomponentscomponents/src/lib/task-manager-components.tsx",
+          "hash": "12134158761599702914"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponentscomponentscomponents/tasks/task-details/task-details.module.css",
+          "hash": "125145030238681982"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponentscomponents/tasks/task-details/task-details.spec.tsx",
+          "hash": "6638941320920611617"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponentscomponents/tasks/task-details/task-details.tsx",
+          "hash": "9042786617054470606"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponents/tasks/task-form/task-form.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponents/tasks/task-form/task-form.spec.tsx",
+          "hash": "2147778215641024064"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponents/tasks/task-form/task-form.tsx",
+          "hash": "13468703597993346047"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponents/tasks/task-list/task-list-item.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponentscomponents/tasks/task-list/task-list-item.spec.tsx",
+          "hash": "1973637170121039671"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/tasks/task-list/task-list-item.tsx",
+          "hash": "13069376657454896344"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/tasks/task-list/task-list.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/componentscomponents/tasks/task-list/task-list.spec.tsx",
+          "hash": "15975547086345494371"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/tasks/task-list/task-list.tsx",
+          "hash": "4913394904111527154"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/tsconfig.json",
+          "hash": "7777951354717366821"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/tsconfig.lib.json",
+          "hash": "13347940390485836959"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/tsconfig.spec.json",
+          "hash": "2404517179498766309"
+        },
+        {
+          "file": "task-manager/libs/task-manager/components/vite.config.ts",
+          "hash": "13094734254595204172"
+        }
+      ],
+      "task-manager-models": [
+        {
+          "file": "task-manager/libs/task-manager/models/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/.eslintrc.json",
+          "hash": "12835607312082306239"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/README.md",
+          "hash": "9209724529111464927"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/package.json",
+          "hash": "8252439992563398750"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/project.json",
+          "hash": "7266789399767904525"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/src/index.ts",
+          "hash": "14872682443947763271"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/src/lib/ajax-response.ts",
+          "hash": "8645128504169720780"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/src/lib/route.ts",
+          "hash": "16666006568234997627"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/src/lib/task.ts",
+          "hash": "3596159388524680644"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/tsconfig.json",
+          "hash": "7777951354717366821"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/tsconfig.lib.json",
+          "hash": "13347940390485836959"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/tsconfig.spec.json",
+          "hash": "2404517179498766309"
+        },
+        {
+          "file": "task-manager/libs/task-manager/models/vite.config.ts",
+          "hash": "1494345094271844535"
+        }
+      ],
+      "date-utils": [
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/.eslintrc.json",
+          "hash": "857118519329349746"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/README.md",
+          "hash": "5450124832291257194"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/package.json",
+          "hash": "5284841370130261469"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/project.json",
+          "hash": "5282919232934437921"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/src/index.ts",
+          "hash": "18127422107966561769"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/src/lib/date-utils.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/src/lib/date-utils.spec.tsx",
+          "hash": "10183878897635358330"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/src/lib/date-utils.tsx",
+          "hash": "5742998143403346447"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/tsconfig.json",
+          "hash": "15281313926799405607"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/tsconfig.lib.json",
+          "hash": "18276454965191384713"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/tsconfig.spec.json",
+          "hash": "5861352105792929081"
+        },
+        {
+          "file": "task-manager/libs/task-manager/core/date-utils/vite.config.ts",
+          "hash": "10559730238558837489"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".github/workflows/jekyll-gh-pages.yml",
+        "hash": "2570638227576473598"
+      },
+      {
+        "file": "docs/Creating a new React Monorepo.docx",
+        "hash": "6630681122422493065"
+      },
+      {
+        "file": "docs/~$eating a new React Monorepo.docx",
+        "hash": "13362238769676729364"
+      },
+      {
+        "file": "docs/~WRL0511.tmp",
+        "hash": "16174381194315629098"
+      },
+      {
+        "file": "docs/~WRL3299.tmp",
+        "hash": "469514796759176244"
+      },
+      {
+        "file": "task-manager/.editorconfig",
+        "hash": "11532813898455409296"
+      },
+      {
+        "file": "task-manager/.eslintignore",
+        "hash": "13404745306227114823"
+      },
+      {
+        "file": "task-manager/.eslintrc.json",
+        "hash": "9188201835120897554"
+      },
+      {
+        "file": "task-manager/.github/workflows/ci.yml",
+        "hash": "5496766467624610716"
+      },
+      {
+        "file": "task-manager/.gitignore",
+        "hash": "8006173599923703420"
+      },
+      {
+        "file": "task-manager/.prettierignore",
+        "hash": "2687824826588932174"
+      },
+      {
+        "file": "task-manager/.prettierrc",
+        "hash": "6820402234827505055"
+      },
+      {
+        "file": "task-manager/.vscode/extensions.json",
+        "hash": "14244474672258854795"
+      },
+      {
+        "file": "task-manager/README.md",
+        "hash": "789324039364168322"
+      },
+      {
+        "file": "task-manager/db.json",
+        "hash": "11651566692961433918"
+      },
+      {
+        "file": "task-manager/nx.json",
+        "hash": "8056848356101193974"
+      },
+      {
+        "file": "task-manager/package-lock.json",
+        "hash": "11184081523489153736"
+      },
+      {
+        "file": "task-manager/package.json",
+        "hash": "10402044591189032097"
+      },
+      {
+        "file": "task-manager/tsconfig.base.json",
+        "hash": "13762141615629406122"
+      },
+      {
+        "file": "task-manager/vitest.workspace.ts",
+        "hash": "17790581426480935240"
+      }
+    ]
+  }
+}

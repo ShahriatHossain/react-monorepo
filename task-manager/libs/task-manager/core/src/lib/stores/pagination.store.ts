@@ -1,4 +1,4 @@
-import { pageSize } from '@task-manager/task-manager-shared';
+import { pageSize } from '@task-manager/shared';
 import { makeAutoObservable } from 'mobx';
 
 export default class PaginationStore {

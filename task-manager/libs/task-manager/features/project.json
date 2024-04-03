@@ -1,9 +1,0 @@
-{
-  "name": "task-manager-features",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/task-manager/features/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project task-manager-features --web",
-  "targets": {}
-}

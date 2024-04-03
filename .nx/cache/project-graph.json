@@ -1,0 +1,166 @@
+{
+  "nodes": {
+    "validation-utils": {
+      "name": "validation-utils",
+      "type": "lib",
+      "data": {
+        "root": "task-manager/libs/task-manager/core/validation-utils",
+        "name": "validation-utils",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/task-manager/core/validation-utils/src",
+        "projectType": "library",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "date-utils": {
+      "name": "date-utils",
+      "type": "lib",
+      "data": {
+        "root": "task-manager/libs/task-manager/core/date-utils",
+        "name": "date-utils",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/task-manager/core/date-utils/src",
+        "projectType": "library",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "task-manager-components": {
+      "name": "task-manager-components",
+      "type": "lib",
+      "data": {
+        "root": "task-manager/libs/task-manager/components",
+        "name": "task-manager-components",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/task-manager/components/src",
+        "projectType": "library",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "task-manager-models": {
+      "name": "task-manager-models",
+      "type": "lib",
+      "data": {
+        "root": "task-manager/libs/task-manager/models",
+        "name": "task-manager-models",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/task-manager/models/src",
+        "projectType": "library",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "task-manager-core": {
+      "name": "task-manager-core",
+      "type": "lib",
+      "data": {
+        "root": "task-manager/libs/task-manager/core",
+        "name": "task-manager-core",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/task-manager/core/src",
+        "projectType": "library",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "task-manager-e2e": {
+      "name": "task-manager-e2e",
+      "type": "e2e",
+      "data": {
+        "root": "task-manager/apps/task-manager-e2e",
+        "name": "task-manager-e2e",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "sourceRoot": "apps/task-manager-e2e/src",
+        "implicitDependencies": [
+          "task-manager"
+        ],
+        "tags": [],
+        "targets": {}
+      }
+    },
+    "task-manager": {
+      "name": "task-manager",
+      "type": "app",
+      "data": {
+        "root": "task-manager/apps/task-manager",
+        "name": "task-manager",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/task-manager/src",
+        "projectType": "application",
+        "tags": [],
+        "targets": {},
+        "implicitDependencies": []
+      }
+    }
+  },
+  "externalNodes": {},
+  "dependencies": {
+    "validation-utils": [],
+    "date-utils": [],
+    "task-manager-components": [],
+    "task-manager-models": [],
+    "task-manager-core": [],
+    "task-manager-e2e": [
+      {
+        "source": "task-manager-e2e",
+        "target": "task-manager",
+        "type": "implicit"
+      }
+    ],
+    "task-manager": []
+  },
+  "version": "6.0"
+}
