@@ -15,6 +15,14 @@ export default class PaginationStore {
 
     setTotalPages(totalPages: number) {
         // Calculate total pages based on total tasks and page size
-        this.totalPages = Math.ceil(totalPages / pageSize);
+        const newTotalPages = Math.max(1, Math.ceil(totalPages / pageSize)); // Ensure totalPages is at least 1
+
+        // Update total pages
+        this.totalPages = totalPages > 0 ? newTotalPages : 1;
+
+        // Adjust current page if it exceeds the new total pages
+        if (this.currentPage > newTotalPages) {
+            this.currentPage = newTotalPages;
+        }
     }
 }

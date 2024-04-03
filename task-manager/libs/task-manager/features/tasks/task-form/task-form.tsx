@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   Button,
+  Checkbox,
   Field,
   Input,
   makeResetStyles,
@@ -39,6 +40,8 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
   const [enteredDescription, setEnteredDescription] = useState<string>('');
   const [isTitleValid, setIsTitleValid] = useState<boolean>(true);
   const [isDescriptionValid, setIsDescriptionValid] = useState<boolean>(true);
+  const [completed, setCompleted] = React.useState<boolean>(false);
+
 
 
   const styles = useStyles();
@@ -56,6 +59,7 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
           setTask(new TaskFormValues(task));
           setEnteredTitle(task.title);
           setEnteredDescription(task.description);
+          setCompleted(task.completed);
         }
       })
     } else {
@@ -63,6 +67,7 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
       setTask(new TaskFormValues());
       setEnteredTitle('');
       setEnteredDescription('');
+      setCompleted(false);
     }
   }, [id, loadTask]);
 
@@ -78,7 +83,8 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
       let newTask = {
         id: generateRandomId(),
         title: enteredTitle,
-        description: enteredDescription
+        description: enteredDescription,
+        completed: completed
       };
       createTask(newTask).then(() => handleClearForm())
     } else {
@@ -86,7 +92,8 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
       let currentTask = {
         id: task.id,
         title: enteredTitle,
-        description: enteredDescription
+        description: enteredDescription,
+        completed: completed
       };
 
       updateTask(currentTask).then(() => handleClearForm())
@@ -121,6 +128,11 @@ export const TaskForm: React.FC<TaskFormProps> = observer((props) => {
       <Field label="Description" required validationState={isDescriptionValid ? "none" : "error"} validationMessage={!isDescriptionValid ? "Description is required" : null}>
         <Textarea onChange={descriptionChangeHandler} value={enteredDescription} />
       </Field>
+      <Checkbox
+        checked={completed}
+        onChange={(ev, data) => setCompleted(!!data?.checked)}
+        label="Task Completed"
+      />
       <p className={styles.wrapper}>
         <Button appearance="secondary" onClick={handleClearForm}>Close</Button>
         <Button appearance="primary" onClick={handleAddTask}>Save</Button>

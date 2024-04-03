@@ -17,9 +17,11 @@ export default class TaskStore {
     this.loadingInitial = true;
     try {
       const response = await agent.Tasks.listPaginated(currentPage, limit);
-      this.tasks = response.data;
-      this.setTotalTasks(Number(response.items));
-      this.setLoadingInitial(false);
+      runInAction(() => {
+        this.setTasks(response.data);
+        this.setTotalTasks(Number(response.items));
+        this.setLoadingInitial(false);
+      })
     } catch (error) {
       console.log(error);
       this.setLoadingInitial(false);
@@ -44,6 +46,10 @@ export default class TaskStore {
 
   private setTask = (task: Task) => {
     this.tasks.push(task);
+  };
+
+  private setTasks = (tasks: Task[]) => {
+    this.tasks = tasks;
   };
 
   private getTask = (id: string) => {
@@ -82,13 +88,18 @@ export default class TaskStore {
     try {
       await agent.Tasks.delete(id);
       runInAction(() => {
-        // Find the index of the task with the matching ID in the array
-        const index = this.tasks.findIndex((task) => task.id === id);
-        // If the task is found, remove it from the array
-        if (index !== -1) {
-          this.tasks.splice(index, 1);
+        // Filter out the task with the matching ID
+        this.tasks = this.tasks.filter(task => task.id !== id);
+
+        // Check if the current page becomes empty after deleting the task
+        if (this.tasks.length === 0 && this.totalTasks > 0) {
+          // If the current page is empty and there are more tasks available, navigate to the previous page
+          const totalPages = Math.ceil(this.totalTasks / pageSize);
+          const currentPage = Math.max(1, totalPages - 1); // Ensure currentPage is at least 1
+          this.loadPaginatedTasks(currentPage, pageSize);
         }
       });
+
     } catch (error) {
       console.log(error);
     }
