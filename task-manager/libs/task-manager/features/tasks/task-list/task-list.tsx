@@ -176,7 +176,7 @@ export const TaskList: React.FC<TaskListProps> = observer((props) => {
                         <Link to={`/react-monorepo/task/${item.id}`}>
                           <Button icon={<ContentViewGalleryRegular />} title='Details' aria-label="Details" />
                         </Link>
-                        <Button style={item.completed ? { color: 'green' } : {}} icon={<CheckmarkRegular />} title='Complete Task' aria-label="Complete Task" onClick={() => completeTaskHandler(item)} />
+                        <Button style={item.completed ? { color: 'green' } : {}} icon={<CheckmarkRegular />} title={item.completed? 'Task completed': 'Please complete task'} aria-label="Complete Task" onClick={() => completeTaskHandler(item)} />
                       </TableCellLayout>
                     </TableCell>
                   </TableRow>
