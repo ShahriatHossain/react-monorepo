@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { AjaxResponse, Task, TaskFormValues } from '@task-manager/task-manager-models';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'https://shahriathossain.github.io/json-server';
 
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
@@ -15,14 +15,14 @@ const requests = {
 };
 
 const Tasks = {
-  list: () => axios.get<Task[]>('/tasks').then(responseBody),
+  list: () => axios.get<Task[]>('/db.json').then(responseBody),
   listPaginated: (page: number, limit: number) =>
-    axios.get<AjaxResponse>(`/tasks?_page=${page}&_per_page=${limit}`).then(responseBody),
-  details: (id: string) => requests.get<Task>(`/tasks/${id}`),
-  create: (task: TaskFormValues) => requests.post<void>('/tasks', task),
+    axios.get<AjaxResponse>(`/db.json?_page=${page}&_per_page=${limit}`).then(responseBody),
+  details: (id: string) => requests.get<Task>(`/db.json/${id}`),
+  create: (task: TaskFormValues) => requests.post<void>('/db.json', task),
   update: (task: TaskFormValues) =>
-    requests.put<void>(`/tasks/${task.id}`, task),
-  delete: (id: string) => requests.del<void>(`/tasks/${id}`)
+    requests.put<void>(`/db.json/${task.id}`, task),
+  delete: (id: string) => requests.del<void>(`/db.json/${id}`)
 };
 
 const agent = {

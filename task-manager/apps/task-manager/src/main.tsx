@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="react-monorepo">
       <FluentProvider theme={teamsLightTheme}>
         <App />
       </FluentProvider>

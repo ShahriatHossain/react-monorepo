@@ -1,126 +1,4 @@
 {
-  "12942802220751052471": {
-    "build": {
-      "command": "vite build",
-      "options": {
-        "cwd": "libs/task-manager/models"
-      },
-      "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production",
-        {
-          "externalDependencies": [
-            "vite"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\models"
-      ]
-    },
-    "serve": {
-      "command": "vite serve",
-      "options": {
-        "cwd": "libs/task-manager/models"
-      }
-    },
-    "preview": {
-      "command": "vite preview",
-      "options": {
-        "cwd": "libs/task-manager/models"
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "test": {
-      "command": "vitest run",
-      "options": {
-        "cwd": "libs/task-manager/models"
-      },
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        {
-          "externalDependencies": [
-            "vitest"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\models"
-      ]
-    }
-  },
-  "16692446621082997755": {
-    "build": {
-      "command": "vite build",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production",
-        {
-          "externalDependencies": [
-            "vite"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
-      ]
-    },
-    "serve": {
-      "command": "vite serve",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "preview": {
-      "command": "vite preview",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "test": {
-      "command": "vitest run",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        {
-          "externalDependencies": [
-            "vitest"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
-      ]
-    }
-  },
   "15228431072266051538": {
     "build": {
       "command": "vite build",
@@ -365,6 +243,67 @@
       ]
     }
   },
+  "3721273916099650614": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "libs/task-manager/core/date-utils"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\libs\\task-manager\\core\\date-utils"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "libs/task-manager/core/date-utils"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "libs/task-manager/core/date-utils"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "libs/task-manager/core/date-utils"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\core\\date-utils"
+      ]
+    }
+  },
   "10022344764757437620": {
     "build": {
       "command": "vite build",
@@ -426,11 +365,11 @@
       ]
     }
   },
-  "3721273916099650614": {
+  "16692446621082997755": {
     "build": {
       "command": "vite build",
       "options": {
-        "cwd": "libs/task-manager/core/date-utils"
+        "cwd": "libs/task-manager/core"
       },
       "cache": true,
       "dependsOn": [
@@ -446,19 +385,19 @@
         }
       ],
       "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\core\\date-utils"
+        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
       ]
     },
     "serve": {
       "command": "vite serve",
       "options": {
-        "cwd": "libs/task-manager/core/date-utils"
+        "cwd": "libs/task-manager/core"
       }
     },
     "preview": {
       "command": "vite preview",
       "options": {
-        "cwd": "libs/task-manager/core/date-utils"
+        "cwd": "libs/task-manager/core"
       }
     },
     "serve-static": {
@@ -470,7 +409,7 @@
     "test": {
       "command": "vitest run",
       "options": {
-        "cwd": "libs/task-manager/core/date-utils"
+        "cwd": "libs/task-manager/core"
       },
       "cache": true,
       "inputs": [
@@ -483,7 +422,312 @@
         }
       ],
       "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\core\\date-utils"
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
+      ]
+    }
+  },
+  "12942802220751052471": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "libs/task-manager/models"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\libs\\task-manager\\models"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "libs/task-manager/models"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "libs/task-manager/models"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "libs/task-manager/models"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\models"
+      ]
+    }
+  },
+  "5111704756580454313": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "apps/task-manager"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\apps\\task-manager"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "apps/task-manager"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "apps/task-manager"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "apps/task-manager"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\apps\\task-manager"
+      ]
+    }
+  },
+  "13445328751596652190": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
+      ]
+    }
+  },
+  "3080037562386876692": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
+      ]
+    }
+  },
+  "924285751573188921": {
+    "build": {
+      "command": "vite build",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production",
+        {
+          "externalDependencies": [
+            "vite"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
+      ]
+    },
+    "serve": {
+      "command": "vite serve",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "test": {
+      "command": "vitest run",
+      "options": {
+        "cwd": "libs/task-manager/core"
+      },
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        {
+          "externalDependencies": [
+            "vitest"
+          ]
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
       ]
     }
   }
