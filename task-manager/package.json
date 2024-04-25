@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "predeploy": "npx nx run-many -t build",
-    "deploy": "gh-pages -b main -d dist"
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
