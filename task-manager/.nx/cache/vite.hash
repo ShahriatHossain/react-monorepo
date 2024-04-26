@@ -1,5 +1,5 @@
 {
-  "15228431072266051538": {
+  "5111704756580454313": {
     "build": {
       "command": "vite build",
       "options": {
@@ -365,7 +365,7 @@
       ]
     }
   },
-  "16692446621082997755": {
+  "924285751573188921": {
     "build": {
       "command": "vite build",
       "options": {
@@ -487,7 +487,7 @@
       ]
     }
   },
-  "5111704756580454313": {
+  "12236522742850302681": {
     "build": {
       "command": "vite build",
       "options": {
@@ -548,11 +548,11 @@
       ]
     }
   },
-  "13445328751596652190": {
+  "4226013906237270662": {
     "build": {
       "command": "vite build",
       "options": {
-        "cwd": "libs/task-manager/core"
+        "cwd": "apps/task-manager"
       },
       "cache": true,
       "dependsOn": [
@@ -568,19 +568,19 @@
         }
       ],
       "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
+        "{workspaceRoot}\\dist\\apps\\task-manager"
       ]
     },
     "serve": {
       "command": "vite serve",
       "options": {
-        "cwd": "libs/task-manager/core"
+        "cwd": "apps/task-manager"
       }
     },
     "preview": {
       "command": "vite preview",
       "options": {
-        "cwd": "libs/task-manager/core"
+        "cwd": "apps/task-manager"
       }
     },
     "serve-static": {
@@ -592,7 +592,7 @@
     "test": {
       "command": "vitest run",
       "options": {
-        "cwd": "libs/task-manager/core"
+        "cwd": "apps/task-manager"
       },
       "cache": true,
       "inputs": [
@@ -605,129 +605,7 @@
         }
       ],
       "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
-      ]
-    }
-  },
-  "3080037562386876692": {
-    "build": {
-      "command": "vite build",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production",
-        {
-          "externalDependencies": [
-            "vite"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
-      ]
-    },
-    "serve": {
-      "command": "vite serve",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "preview": {
-      "command": "vite preview",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "test": {
-      "command": "vitest run",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        {
-          "externalDependencies": [
-            "vitest"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
-      ]
-    }
-  },
-  "924285751573188921": {
-    "build": {
-      "command": "vite build",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production",
-        {
-          "externalDependencies": [
-            "vite"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\dist\\libs\\task-manager\\core"
-      ]
-    },
-    "serve": {
-      "command": "vite serve",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "preview": {
-      "command": "vite preview",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "test": {
-      "command": "vitest run",
-      "options": {
-        "cwd": "libs/task-manager/core"
-      },
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        {
-          "externalDependencies": [
-            "vitest"
-          ]
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}\\coverage\\libs\\task-manager\\core"
+        "{workspaceRoot}\\coverage\\apps\\task-manager"
       ]
     }
   }

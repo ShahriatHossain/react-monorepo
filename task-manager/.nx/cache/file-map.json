@@ -101,6 +101,14 @@
   "fileMap": {
     "nonProjectFiles": [
       {
+        "file": ".editorconfig",
+        "hash": "11532813898455409296"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "13404745306227114823"
+      },
+      {
         "file": ".eslintrc.json",
         "hash": "9188201835120897554"
       },
@@ -109,114 +117,334 @@
         "hash": "5496766467624610716"
       },
       {
-        "file": ".vscode/extensions.json",
-        "hash": "14244474672258854795"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "11184081523489153736"
-      },
-      {
-        "file": "vitest.workspace.ts",
-        "hash": "17790581426480935240"
-      },
-      {
-        "file": "db.json",
-        "hash": "10484205088573783786"
-      },
-      {
-        "file": "package.json",
-        "hash": "14890004744081367839"
-      },
-      {
-        "file": "nx.json",
-        "hash": "8056848356101193974"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "13404745306227114823"
+        "file": ".gitignore",
+        "hash": "8006173599923703420"
       },
       {
         "file": ".prettierignore",
         "hash": "2687824826588932174"
       },
       {
-        "file": ".gitignore",
-        "hash": "8006173599923703420"
+        "file": ".prettierrc",
+        "hash": "6820402234827505055"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "14244474672258854795"
       },
       {
         "file": "README.md",
         "hash": "789324039364168322"
       },
       {
-        "file": ".prettierrc",
-        "hash": "6820402234827505055"
+        "file": "db.json",
+        "hash": "10484205088573783786"
       },
       {
-        "file": ".editorconfig",
-        "hash": "11532813898455409296"
+        "file": "nx.json",
+        "hash": "8056848356101193974"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "11184081523489153736"
+      },
+      {
+        "file": "package.json",
+        "hash": "1864668962898285822"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "12840138185004582125"
+      },
+      {
+        "file": "vitest.workspace.ts",
+        "hash": "17790581426480935240"
       }
     ],
     "projectFileMap": {
-      "date-utils": [
+      "task-manager-e2e": [
         {
-          "file": "libs/task-manager/core/date-utils/.babelrc",
+          "file": "apps/task-manager-e2e/.eslintrc.json",
+          "hash": "10799368048025705622"
+        },
+        {
+          "file": "apps/task-manager-e2e/cypress.config.ts",
+          "hash": "2410277204116542716",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/task-manager-e2e/project.json",
+          "hash": "14967569012186179651"
+        },
+        {
+          "file": "apps/task-manager-e2e/src/e2e/app.cy.ts",
+          "hash": "9976285791415738711"
+        },
+        {
+          "file": "apps/task-manager-e2e/src/fixtures/example.json",
+          "hash": "13882982864087580737"
+        },
+        {
+          "file": "apps/task-manager-e2e/src/support/app.po.ts",
+          "hash": "5364106453863571025"
+        },
+        {
+          "file": "apps/task-manager-e2e/src/support/commands.ts",
+          "hash": "7570864621153670540"
+        },
+        {
+          "file": "apps/task-manager-e2e/src/support/e2e.ts",
+          "hash": "14369563060992369541"
+        },
+        {
+          "file": "apps/task-manager-e2e/tsconfig.json",
+          "hash": "10574899838287769993"
+        }
+      ],
+      "task-manager-core": [
+        {
+          "file": "libs/task-manager/core/.babelrc",
           "hash": "15003411175763814189"
         },
         {
-          "file": "libs/task-manager/core/date-utils/.eslintrc.json",
-          "hash": "857118519329349746"
+          "file": "libs/task-manager/core/.eslintrc.json",
+          "hash": "12835607312082306239"
         },
         {
-          "file": "libs/task-manager/core/date-utils/README.md",
-          "hash": "5450124832291257194"
+          "file": "libs/task-manager/core/README.md",
+          "hash": "8252652803983116362"
         },
         {
-          "file": "libs/task-manager/core/date-utils/package.json",
-          "hash": "5284841370130261469"
+          "file": "libs/task-manager/core/package.json",
+          "hash": "14288892774538477346"
         },
         {
-          "file": "libs/task-manager/core/date-utils/project.json",
-          "hash": "5282919232934437921"
+          "file": "libs/task-manager/core/project.json",
+          "hash": "9757622708431669784"
         },
         {
-          "file": "libs/task-manager/core/date-utils/src/index.ts",
-          "hash": "18127422107966561769"
+          "file": "libs/task-manager/core/src/index.ts",
+          "hash": "15927939294808823026"
         },
         {
-          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.module.css",
-          "hash": "9824504850739023139"
+          "file": "libs/task-manager/core/src/lib/api/agent.ts",
+          "hash": "3017031801619241664",
+          "deps": [
+            "npm:axios",
+            "task-manager-models"
+          ]
         },
         {
-          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.spec.tsx",
-          "hash": "10183878897635358330",
+          "file": "libs/task-manager/core/src/lib/services/task.service.ts",
+          "hash": "10132673916371342097",
+          "deps": [
+            "task-manager-models"
+          ]
+        },
+        {
+          "file": "libs/task-manager/core/src/lib/store.ts",
+          "hash": "10415166934237794025",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "libs/task-manager/core/src/lib/stores/dialog.store.ts",
+          "hash": "3928446146608050837",
+          "deps": [
+            "npm:mobx"
+          ]
+        },
+        {
+          "file": "libs/task-manager/core/src/lib/stores/pagination.store.ts",
+          "hash": "1302622244589836722",
+          "deps": [
+            "shared",
+            "npm:mobx"
+          ]
+        },
+        {
+          "file": "libs/task-manager/core/src/lib/stores/task.store.ts",
+          "hash": "9269998023145230534",
+          "deps": [
+            "npm:mobx",
+            "task-manager-models",
+            "shared"
+          ]
+        },
+        {
+          "file": "libs/task-manager/core/tsconfig.json",
+          "hash": "7777951354717366821"
+        },
+        {
+          "file": "libs/task-manager/core/tsconfig.lib.json",
+          "hash": "13347940390485836959"
+        },
+        {
+          "file": "libs/task-manager/core/tsconfig.spec.json",
+          "hash": "2404517179498766309"
+        },
+        {
+          "file": "libs/task-manager/core/vite.config.ts",
+          "hash": "2650652757486940280",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:vite-plugin-dts",
+            "npm:path",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "task-manager": [
+        {
+          "file": "apps/task-manager/.eslintrc.json",
+          "hash": "14830867113928387670"
+        },
+        {
+          "file": "apps/task-manager/index.html",
+          "hash": "4413454428266752526"
+        },
+        {
+          "file": "apps/task-manager/project.json",
+          "hash": "9805927964709307528"
+        },
+        {
+          "file": "apps/task-manager/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/task-manager/src/app/app.module.css",
+          "hash": "14507130133388590702"
+        },
+        {
+          "file": "apps/task-manager/src/app/app.spec.tsx",
+          "hash": "5363817041264319957",
           "deps": [
             "npm:@testing-library/react"
           ]
         },
         {
-          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.tsx",
-          "hash": "5742998143403346447"
+          "file": "apps/task-manager/src/app/app.tsx",
+          "hash": "16992507294083699279",
+          "deps": [
+            "npm:react",
+            "task-manager-components",
+            "npm:@fluentui/react-components",
+            "npm:react-router-dom"
+          ]
         },
         {
-          "file": "libs/task-manager/core/date-utils/tsconfig.json",
-          "hash": "15281313926799405607"
+          "file": "apps/task-manager/src/app/nx-welcome.tsx",
+          "hash": "307543222547804912"
         },
         {
-          "file": "libs/task-manager/core/date-utils/tsconfig.lib.json",
-          "hash": "18276454965191384713"
+          "file": "apps/task-manager/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
         },
         {
-          "file": "libs/task-manager/core/date-utils/tsconfig.spec.json",
-          "hash": "5861352105792929081"
+          "file": "apps/task-manager/src/main.tsx",
+          "hash": "17019032567997891883",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "npm:@fluentui/react-components",
+            "npm:react-router-dom"
+          ]
         },
         {
-          "file": "libs/task-manager/core/date-utils/vite.config.ts",
-          "hash": "10559730238558837489",
+          "file": "apps/task-manager/src/styles.css",
+          "hash": "4569669505032165803"
+        },
+        {
+          "file": "apps/task-manager/tsconfig.app.json",
+          "hash": "9014817974750934731"
+        },
+        {
+          "file": "apps/task-manager/tsconfig.json",
+          "hash": "8792423286157740794"
+        },
+        {
+          "file": "apps/task-manager/tsconfig.spec.json",
+          "hash": "2338756782167906093"
+        },
+        {
+          "file": "apps/task-manager/vite.config.ts",
+          "hash": "12854722678892173899",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "shared": [
+        {
+          "file": "libs/shared/.babelrc",
+          "hash": "15003411175763814189"
+        },
+        {
+          "file": "libs/shared/.eslintrc.json",
+          "hash": "14830867113928387670"
+        },
+        {
+          "file": "libs/shared/README.md",
+          "hash": "13655020513119824680"
+        },
+        {
+          "file": "libs/shared/package.json",
+          "hash": "13674900305131179309"
+        },
+        {
+          "file": "libs/shared/project.json",
+          "hash": "3449399787971741299"
+        },
+        {
+          "file": "libs/shared/src/index.ts",
+          "hash": "17557799175414195312"
+        },
+        {
+          "file": "libs/shared/src/lib/constants/common.ts",
+          "hash": "12969714466886162818"
+        },
+        {
+          "file": "libs/shared/src/lib/constants/routes.ts",
+          "hash": "13194709617253086588",
+          "deps": [
+            "task-manager-models"
+          ]
+        },
+        {
+          "file": "libs/shared/src/lib/hooks/use-breadcrumbs.ts",
+          "hash": "2924401879633140493",
+          "deps": [
+            "npm:react",
+            "npm:react-router-dom",
+            "task-manager-models"
+          ]
+        },
+        {
+          "file": "libs/shared/src/lib/utils/utils.ts",
+          "hash": "1744304527418351323"
+        },
+        {
+          "file": "libs/shared/tsconfig.json",
+          "hash": "11468858494619402915"
+        },
+        {
+          "file": "libs/shared/tsconfig.lib.json",
+          "hash": "1750390632875427341"
+        },
+        {
+          "file": "libs/shared/tsconfig.spec.json",
+          "hash": "7941495890312015832"
+        },
+        {
+          "file": "libs/shared/vite.config.ts",
+          "hash": "17318177715343533767",
           "deps": [
             "npm:vite",
             "npm:@vitejs/plugin-react",
@@ -352,185 +580,6 @@
             "npm:path",
             "npm:@nx/vite"
           ]
-        }
-      ],
-      "shared": [
-        {
-          "file": "libs/shared/.babelrc",
-          "hash": "15003411175763814189"
-        },
-        {
-          "file": "libs/shared/.eslintrc.json",
-          "hash": "14830867113928387670"
-        },
-        {
-          "file": "libs/shared/README.md",
-          "hash": "13655020513119824680"
-        },
-        {
-          "file": "libs/shared/package.json",
-          "hash": "13674900305131179309"
-        },
-        {
-          "file": "libs/shared/project.json",
-          "hash": "3449399787971741299"
-        },
-        {
-          "file": "libs/shared/src/index.ts",
-          "hash": "17557799175414195312"
-        },
-        {
-          "file": "libs/shared/src/lib/constants/common.ts",
-          "hash": "12969714466886162818"
-        },
-        {
-          "file": "libs/shared/src/lib/constants/routes.ts",
-          "hash": "13194709617253086588",
-          "deps": [
-            "task-manager-models"
-          ]
-        },
-        {
-          "file": "libs/shared/src/lib/hooks/use-breadcrumbs.ts",
-          "hash": "2924401879633140493",
-          "deps": [
-            "npm:react",
-            "npm:react-router-dom",
-            "task-manager-models"
-          ]
-        },
-        {
-          "file": "libs/shared/src/lib/utils/utils.ts",
-          "hash": "1744304527418351323"
-        },
-        {
-          "file": "libs/shared/tsconfig.json",
-          "hash": "11468858494619402915"
-        },
-        {
-          "file": "libs/shared/tsconfig.lib.json",
-          "hash": "1750390632875427341"
-        },
-        {
-          "file": "libs/shared/tsconfig.spec.json",
-          "hash": "7941495890312015832"
-        },
-        {
-          "file": "libs/shared/vite.config.ts",
-          "hash": "17318177715343533767",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react",
-            "npm:vite-plugin-dts",
-            "npm:path",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "validation-utils": [
-        {
-          "file": "libs/task-manager/core/validation-utils/.babelrc",
-          "hash": "15003411175763814189"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/.eslintrc.json",
-          "hash": "857118519329349746"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/README.md",
-          "hash": "4741951602358655600"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/package.json",
-          "hash": "7075191042691479371"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/project.json",
-          "hash": "18429523168986022610"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/src/index.ts",
-          "hash": "14179640438017934417"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.module.css",
-          "hash": "9824504850739023139"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.spec.tsx",
-          "hash": "8180890139750708122",
-          "deps": [
-            "npm:@testing-library/react"
-          ]
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.tsx",
-          "hash": "14542782736748754263"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/tsconfig.json",
-          "hash": "15281313926799405607"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/tsconfig.lib.json",
-          "hash": "18276454965191384713"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/tsconfig.spec.json",
-          "hash": "5861352105792929081"
-        },
-        {
-          "file": "libs/task-manager/core/validation-utils/vite.config.ts",
-          "hash": "11802920686548096465",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react",
-            "npm:vite-plugin-dts",
-            "npm:path",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "task-manager-e2e": [
-        {
-          "file": "apps/task-manager-e2e/.eslintrc.json",
-          "hash": "10799368048025705622"
-        },
-        {
-          "file": "apps/task-manager-e2e/cypress.config.ts",
-          "hash": "2410277204116542716",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/task-manager-e2e/project.json",
-          "hash": "14967569012186179651"
-        },
-        {
-          "file": "apps/task-manager-e2e/src/e2e/app.cy.ts",
-          "hash": "9976285791415738711"
-        },
-        {
-          "file": "apps/task-manager-e2e/src/fixtures/example.json",
-          "hash": "13882982864087580737"
-        },
-        {
-          "file": "apps/task-manager-e2e/src/support/app.po.ts",
-          "hash": "5364106453863571025"
-        },
-        {
-          "file": "apps/task-manager-e2e/src/support/commands.ts",
-          "hash": "7570864621153670540"
-        },
-        {
-          "file": "apps/task-manager-e2e/src/support/e2e.ts",
-          "hash": "14369563060992369541"
-        },
-        {
-          "file": "apps/task-manager-e2e/tsconfig.json",
-          "hash": "10574899838287769993"
         }
       ],
       "task-manager-components": [
@@ -692,174 +741,125 @@
           ]
         }
       ],
-      "task-manager": [
+      "validation-utils": [
         {
-          "file": "apps/task-manager/.eslintrc.json",
-          "hash": "14830867113928387670"
+          "file": "libs/task-manager/core/validation-utils/.babelrc",
+          "hash": "15003411175763814189"
         },
         {
-          "file": "apps/task-manager/index.html",
-          "hash": "4413454428266752526"
+          "file": "libs/task-manager/core/validation-utils/.eslintrc.json",
+          "hash": "857118519329349746"
         },
         {
-          "file": "apps/task-manager/project.json",
-          "hash": "9805927964709307528"
+          "file": "libs/task-manager/core/validation-utils/README.md",
+          "hash": "4741951602358655600"
         },
         {
-          "file": "apps/task-manager/public/favicon.ico",
-          "hash": "9303420814833116677"
+          "file": "libs/task-manager/core/validation-utils/package.json",
+          "hash": "7075191042691479371"
         },
         {
-          "file": "apps/task-manager/src/app/app.module.css",
-          "hash": "14507130133388590702"
+          "file": "libs/task-manager/core/validation-utils/project.json",
+          "hash": "18429523168986022610"
         },
         {
-          "file": "apps/task-manager/src/app/app.spec.tsx",
-          "hash": "5363817041264319957",
+          "file": "libs/task-manager/core/validation-utils/src/index.ts",
+          "hash": "14179640438017934417"
+        },
+        {
+          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.spec.tsx",
+          "hash": "8180890139750708122",
           "deps": [
             "npm:@testing-library/react"
           ]
         },
         {
-          "file": "apps/task-manager/src/app/app.tsx",
-          "hash": "16992507294083699279",
-          "deps": [
-            "npm:react",
-            "task-manager-components",
-            "npm:@fluentui/react-components",
-            "npm:react-router-dom"
-          ]
+          "file": "libs/task-manager/core/validation-utils/src/lib/validation-utils.tsx",
+          "hash": "14542782736748754263"
         },
         {
-          "file": "apps/task-manager/src/app/nx-welcome.tsx",
-          "hash": "307543222547804912"
+          "file": "libs/task-manager/core/validation-utils/tsconfig.json",
+          "hash": "15281313926799405607"
         },
         {
-          "file": "apps/task-manager/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
+          "file": "libs/task-manager/core/validation-utils/tsconfig.lib.json",
+          "hash": "18276454965191384713"
         },
         {
-          "file": "apps/task-manager/src/main.tsx",
-          "hash": "17019032567997891883",
-          "deps": [
-            "npm:react",
-            "npm:react-dom",
-            "npm:@fluentui/react-components",
-            "npm:react-router-dom"
-          ]
+          "file": "libs/task-manager/core/validation-utils/tsconfig.spec.json",
+          "hash": "5861352105792929081"
         },
         {
-          "file": "apps/task-manager/src/styles.css",
-          "hash": "4569669505032165803"
-        },
-        {
-          "file": "apps/task-manager/tsconfig.app.json",
-          "hash": "9014817974750934731"
-        },
-        {
-          "file": "apps/task-manager/tsconfig.json",
-          "hash": "8792423286157740794"
-        },
-        {
-          "file": "apps/task-manager/tsconfig.spec.json",
-          "hash": "2338756782167906093"
-        },
-        {
-          "file": "apps/task-manager/vite.config.ts",
-          "hash": "12854722678892173899",
+          "file": "libs/task-manager/core/validation-utils/vite.config.ts",
+          "hash": "11802920686548096465",
           "deps": [
             "npm:vite",
             "npm:@vitejs/plugin-react",
+            "npm:vite-plugin-dts",
+            "npm:path",
             "npm:@nx/vite"
           ]
         }
       ],
-      "task-manager-core": [
+      "date-utils": [
         {
-          "file": "libs/task-manager/core/.babelrc",
+          "file": "libs/task-manager/core/date-utils/.babelrc",
           "hash": "15003411175763814189"
         },
         {
-          "file": "libs/task-manager/core/.eslintrc.json",
-          "hash": "12835607312082306239"
+          "file": "libs/task-manager/core/date-utils/.eslintrc.json",
+          "hash": "857118519329349746"
         },
         {
-          "file": "libs/task-manager/core/README.md",
-          "hash": "8252652803983116362"
+          "file": "libs/task-manager/core/date-utils/README.md",
+          "hash": "5450124832291257194"
         },
         {
-          "file": "libs/task-manager/core/package.json",
-          "hash": "14288892774538477346"
+          "file": "libs/task-manager/core/date-utils/package.json",
+          "hash": "5284841370130261469"
         },
         {
-          "file": "libs/task-manager/core/project.json",
-          "hash": "9757622708431669784"
+          "file": "libs/task-manager/core/date-utils/project.json",
+          "hash": "5282919232934437921"
         },
         {
-          "file": "libs/task-manager/core/src/index.ts",
-          "hash": "15927939294808823026"
+          "file": "libs/task-manager/core/date-utils/src/index.ts",
+          "hash": "18127422107966561769"
         },
         {
-          "file": "libs/task-manager/core/src/lib/api/agent.ts",
-          "hash": "3017031801619241664",
+          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.module.css",
+          "hash": "9824504850739023139"
+        },
+        {
+          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.spec.tsx",
+          "hash": "10183878897635358330",
           "deps": [
-            "npm:axios",
-            "task-manager-models"
+            "npm:@testing-library/react"
           ]
         },
         {
-          "file": "libs/task-manager/core/src/lib/services/task.service.ts",
-          "hash": "10132673916371342097",
-          "deps": [
-            "task-manager-models"
-          ]
+          "file": "libs/task-manager/core/date-utils/src/lib/date-utils.tsx",
+          "hash": "5742998143403346447"
         },
         {
-          "file": "libs/task-manager/core/src/lib/store.ts",
-          "hash": "10415166934237794025",
-          "deps": [
-            "npm:react"
-          ]
+          "file": "libs/task-manager/core/date-utils/tsconfig.json",
+          "hash": "15281313926799405607"
         },
         {
-          "file": "libs/task-manager/core/src/lib/stores/dialog.store.ts",
-          "hash": "3928446146608050837",
-          "deps": [
-            "npm:mobx"
-          ]
+          "file": "libs/task-manager/core/date-utils/tsconfig.lib.json",
+          "hash": "18276454965191384713"
         },
         {
-          "file": "libs/task-manager/core/src/lib/stores/pagination.store.ts",
-          "hash": "1302622244589836722",
-          "deps": [
-            "shared",
-            "npm:mobx"
-          ]
+          "file": "libs/task-manager/core/date-utils/tsconfig.spec.json",
+          "hash": "5861352105792929081"
         },
         {
-          "file": "libs/task-manager/core/src/lib/stores/task.store.ts",
-          "hash": "9269998023145230534",
-          "deps": [
-            "npm:mobx",
-            "task-manager-models",
-            "shared"
-          ]
-        },
-        {
-          "file": "libs/task-manager/core/tsconfig.json",
-          "hash": "7777951354717366821"
-        },
-        {
-          "file": "libs/task-manager/core/tsconfig.lib.json",
-          "hash": "13347940390485836959"
-        },
-        {
-          "file": "libs/task-manager/core/tsconfig.spec.json",
-          "hash": "2404517179498766309"
-        },
-        {
-          "file": "libs/task-manager/core/vite.config.ts",
-          "hash": "2650652757486940280",
+          "file": "libs/task-manager/core/date-utils/vite.config.ts",
+          "hash": "10559730238558837489",
           "deps": [
             "npm:vite",
             "npm:@vitejs/plugin-react",
